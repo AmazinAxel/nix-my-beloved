@@ -1,6 +1,5 @@
 <template>
-  <div>
-  </div>
+  <NuxtPage/>
 
   <!-- how its gonna work
     - starts by having a bunch of nix flakes everywhere and tap to continue
