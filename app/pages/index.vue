@@ -1,12 +1,14 @@
 <script setup>
-    import { ArrowRightIcon } from '@heroicons/vue/24/solid'
+    import { ArrowRightIcon } from '@heroicons/vue/24/solid';
+
+    const open = ref(false); // is flipbook opened
 </script>
 
 <template>
-    <div
-        class="flex items-center justify-center h-screen bg-light-3 z-[10]"
-    >
-        <button @click="navigateTo('/book')"
+    <BookView v-if="open"/>
+    <div v-else class="flex items-center justify-center h-screen bg-light-3 z-[10]" >
+        <button
+            @click="open = true"
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem]
 
             transition-all duration-50 ease-out
@@ -36,7 +38,7 @@
             }"
 
             class="w-10 z-[0] absolute opacity-50
-                
+
                 transition-all duration-[1000ms] ease-out
                 hover:rotate-[300deg] hover:scale-[3]
                 active:scale-[1.2] active:rotate-[0deg]
