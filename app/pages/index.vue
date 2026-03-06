@@ -4,14 +4,14 @@
 
 <template>
     <div
-        class="flex items-center justify-center h-screen bg-light-3"
+        class="flex items-center justify-center h-screen bg-light-3 z-[10]"
     >
         <button @click="navigateTo('/book')"
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem]
 
             transition-all duration-50 ease-out
             hover:scale-105 hover:shadow-lg hover:shadow-blue-1-500/50
-         active:scale-95
+            active:scale-95
             "
         >
             <div class="basis-3/4">
@@ -26,5 +26,21 @@
             "/>
         </button>
         <!-- images everywhere of nix flakes moving around and dancing, arrow to right with blue card and white background -->
+
+        <div v-for="_ in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
+            <img src="/nix.svg" :style="{
+                top: Math.random() * 100 + 'vh',
+                left: Math.random() * 100 + 'vw',
+                width: Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
+                rotate: Math.random() * 100 + 'deg'
+            }"
+
+            class="w-10 z-[0] absolute opacity-50
+                
+                transition-all duration-[1000ms] ease-out
+                hover:rotate-[300deg] hover:scale-[3]
+                active:scale-[1.2] active:rotate-[0deg]
+            "/>
+        </div>
     </div>
 </template>
