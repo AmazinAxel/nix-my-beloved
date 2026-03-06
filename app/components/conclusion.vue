@@ -1,0 +1,1 @@
+    - last slide closes the book and ends with "nix my beloved" and gif of petting nix

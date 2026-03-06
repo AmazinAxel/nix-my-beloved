@@ -1,7 +1,8 @@
 <script setup>
     import { ArrowRightIcon } from '@heroicons/vue/24/solid';
 
-    const open = ref(false); // is flipbook opened
+    const page = ref(0); // flipbook page, 0 = not opened
+    provide('page', page); // make var global
 
     // fun particles
     import confetti from 'canvas-confetti';
@@ -45,12 +46,13 @@
 </script>
 
 <template>
-    <BookView v-if="open"/>
-    <div v-else class="flex items-center justify-center h-screen bg-light-3 z-[10]" >
+    <!-- todo animate betwen open and close states -->
+    <div class="relative flex items-center justify-center h-screen bg-light-3 z-[10] overflow-hidden">
+        <Book/>
         <button
             @mousedown="(event) => {
                 buttonParticles(event, 20)
-                open = true
+                page = 1
             }"
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem]
 
@@ -58,6 +60,8 @@
             hover:scale-105 hover:shadow-lg hover:shadow-blue-1-500/50
             active:scale-95
             "
+
+            v-if="page == 0"
         >
             <div class="basis-3/4">
                 <h1 class="text-light-1 text-xl"><strong>Nix</strong> is awesome</h1>
@@ -72,12 +76,14 @@
         </button>
         <!-- images everywhere of nix flakes moving around and dancing, arrow to right with blue card and white background -->
 
-        <div v-for="_ in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
+        <div v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
+
+            <!-- this styling is very messy but basically seperates all the flakes into a cell and randomizes location per cell -->
             <img src="/nix.svg" :style="{
-                top: Math.random() * 100 + 'vh',
-                left: Math.random() * 100 + 'vw',
-                width: Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
-                rotate: Math.random() * 100 + 'deg'
+                top: ((Math.floor(i / 10) * 20) + (Math.random() * 20)) + 'vh',
+                left: (((i % 10) * 10) + (Math.random() * 10)) + 'vw',
+                width:  Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
+                rotate: (Math.random() * 360) + 'deg'
             }"
 
             @mouseenter="particlesFromLoc($event, 2)"

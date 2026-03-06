@@ -1,6 +1,12 @@
+<script setup>
+    const page = inject('page'); // for flipbook page tracking
+</script>
+
 <template>
-    <div>
-        <!-- animated flip book thing
-        -->
+    <div v-if="page != 0" class="z-[20]">
+        <!-- animated flip book thing -->
+        
+        <Page1 v-if="page == 1"/>
+        <Page2 v-if="page == 2"/>
     </div>
 </template>

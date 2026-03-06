@@ -1,0 +1,2 @@
+        - "i can install u lots of random devices like this cheap chinese handheld" ("although dont try running a desktop, this thing is underpowered")
+        - put image of running nix on the rg35xx-h
