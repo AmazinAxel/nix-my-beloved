@@ -2,6 +2,19 @@
     import { ArrowRightIcon } from '@heroicons/vue/24/solid';
 
     const open = ref(false); // is flipbook opened
+
+    // fun particles
+    import confetti from 'canvas-confetti';
+    const particles = (loc, amount) => {
+        confetti({
+            particleCount: amount,
+            origin: {
+                x: loc.clientX / window.innerWidth,
+                y: loc.clientY / window.innerHeight
+            }
+        })
+    };
+
 </script>
 
 <template>
@@ -17,7 +30,7 @@
             "
         >
             <div class="basis-3/4">
-                <h1 class="text-light-1 text-xl"><strong>Nix</strong> my beloved</h1>
+                <h1 class="text-light-1 text-xl"><strong>Nix</strong> is awesome</h1>
                 <h2 class="text-light-3 text-lg">(click to continue)</h2>
             </div>
             <ArrowRightIcon class="
@@ -36,6 +49,9 @@
                 width: Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
                 rotate: Math.random() * 100 + 'deg'
             }"
+
+            @mouseenter="particles($event, 10, 100)"
+            @click="particles($event, 10, 1000)"
 
             class="w-10 z-[0] absolute opacity-50
 
