@@ -1,5 +1,5 @@
 <script setup>
-    const page = inject('page')
+    const page = inject('page');
 </script>
 <template>
     <h1>why i love nix</h1>
