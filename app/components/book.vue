@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div v-if="page != 0" class="z-[20] absolute
+    <div class="z-[20] absolute
     
         transition-all duration-[1000ms] ease-out
         ">
