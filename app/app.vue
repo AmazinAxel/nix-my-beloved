@@ -6,9 +6,9 @@
   import confetti from 'canvas-confetti';
   
   // keybinds so i get extra heart
-  onMounted(() => window.addEventListener('keydown', (e) => {
-    if ((e.code === 'Space') && page.value < 8) page.value++;
-  }));
+  onMounted(() => window.addEventListener('keydown', (e) =>
+    (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 8) && page.value++
+  ));
 
   const defaultParticles = {
     spread: 360,
