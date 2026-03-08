@@ -9,7 +9,7 @@
         page++
     }"
     class="
-        group bg-blue-2 p-2 rounded-lg text-light-1 shadow-md font-body bottom-[1rem] left-[1rem] fixed flex items-center gap-[5px]
+        group bg-blue-2 p-2 rounded-lg text-light-1 shadow-md font-body flex items-center gap-[5px] self-start mt-auto
 
         transition-all duration-[50ms] ease-out
         hover:scale-105
