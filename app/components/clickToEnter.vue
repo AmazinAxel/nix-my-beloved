@@ -14,7 +14,7 @@
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem]
 
                 transition-all duration-50 ease-out
-                hover:scale-105 hover:shadow-lg hover:shadow-blue-1-500/50
+                hover:scale-105 hover:shadow-lg hover:shadow-blue-1-500/50 hover:bg-blue-1
             ">
             <div class="basis-3/4">
                 <h1 class="text-light-1 text-xl font-header"><strong>Nix</strong> is awesome</h1>

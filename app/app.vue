@@ -48,11 +48,12 @@
   <!-- center everything -->
   <div class="relative flex items-center justify-center h-screen bg-light-3 overflow-hidden">
     
-    <!-- main button to card transition -->
+    <!-- main transitions -->
     <div class="inset-0 flex items-center justify-center z-10">
       <Transition name="main" mode="out-in">
         <ClickToEnter v-if="page == 0"/>
-        <Book v-else/>
+        <Page1 v-else-if="page == 1"/>
+        <Page2 v-else-if="page == 2"/>
       </Transition>
     </div>
 
