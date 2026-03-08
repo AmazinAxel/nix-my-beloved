@@ -1,7 +1,3 @@
-<script setup>
-    import { ArrowRightIcon } from '@heroicons/vue/24/solid';
-</script>
-
 <template>
     <div class="flex gap-[1rem]">
         <div class="basis-1/4">
@@ -10,6 +6,6 @@
             <p class="inline-flex items-center gap-1 text-[1rem] italic font-body opacity-75 leading-tight">also look at my desktop ></p>
             <ContinueBtn/>
         </div>
-        <img class="basis-3/4 w-full rounded-md shadow-lg" src="/coeur-demo.png"/>
+        <NuxtImg class="basis-3/4 w-full rounded-md shadow-lg" src="/coeur-demo.png" loading="lazy"/>
     </div>
 </template>

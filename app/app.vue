@@ -50,7 +50,7 @@
     
     <!-- main button to card transition -->
     <div class="inset-0 flex items-center justify-center z-10">
-      <Transition name="main">
+      <Transition name="main" mode="out-in">
         <ClickToEnter v-if="page == 0"/>
         <Book v-else/>
       </Transition>
@@ -59,7 +59,7 @@
     <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
 
       <!-- this styling is very messy but basically seperates all the flakes into a cell and randomizes location per cell -->
-      <img src="/nix.svg" :style="{
+      <NuxtImg src="/nix.svg" :style="{
         top: ((Math.floor(i / 10) * 20) + (Math.random() * 20)) + 'vh',
         left: (((i % 10) * 10) + (Math.random() * 10)) + 'vw',
         width:  Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
