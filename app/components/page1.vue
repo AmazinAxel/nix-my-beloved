@@ -4,7 +4,7 @@
             <div class="basis-1/4">
                 <h1 class="text-[2rem] font-bold font-header leading-tight">why i love nix</h1>
                 <p class="text-[1.5rem] italic font-body -mt-[8px] mb-[4px]">& NixOS</p>
-                <p class="inline-flex items-center gap-1 text-[1rem] italic font-body opacity-75 leading-tight">also look at my desktop ></p>
+                <p class="inline-flex items-center gap-1 text-[1rem] italic font-body opacity-75 leading-tight">just look at my desktop ></p>
                 <ContinueBtn/>
             </div>
             <NuxtImg class="basis-3/4 w-full rounded-md shadow-lg" src="/coeur-demo.png" loading="lazy"/>
