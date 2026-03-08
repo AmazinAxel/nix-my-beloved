@@ -9,7 +9,7 @@
     spread: 360,
     startVelocity: 5,
     flat: true, // looks better
-    decay: 0.88, // how fast speed changes
+    decay: 0.88, // changes speed
     gravity: 0.1,
     ticks: 25,
     shapes: ['square'],
