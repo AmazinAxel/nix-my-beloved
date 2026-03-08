@@ -1,10 +1,15 @@
+<script setup>
+    import { ArrowRightIcon } from '@heroicons/vue/24/solid';
+</script>
+
 <template>
     <div class="flex gap-[1rem]">
-        <div>
-            <h1 class="text-[2rem] font-bold">why i love nix</h1>
-            <p class="text-[1.5rem] italic">(and NixOS)</p>
+        <div class="basis-1/4">
+            <h1 class="text-[2rem] font-bold font-header leading-tight">why i love nix</h1>
+            <p class="text-[1.5rem] italic font-body -mt-[8px] mb-[4px]">& NixOS</p>
+            <p class="inline-flex items-center gap-1 text-[1rem] italic font-body opacity-75 leading-tight">also look at my desktop ></p>
             <ContinueBtn/>
         </div>
-        <img src="/coeur-demo.png"/>
+        <img class="basis-3/4 w-full rounded-md shadow-lg" src="/coeur-demo.png"/>
     </div>
 </template>

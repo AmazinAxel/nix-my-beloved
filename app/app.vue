@@ -82,9 +82,9 @@
         hover:rotate-[300deg] hover:scale-[3]
       "/>
     </div>
+    <p class="absolute font-header color-darkest-4 bottom-[1rem] opacity-50">tip: u can press [space] to continue</p>
   </div>
 </template>
-
 
 <style> /* transition between continue button and flipbook */
   .main-enter-from { transform: translateX(50rem); scale: 0.5; opacity: 0; }

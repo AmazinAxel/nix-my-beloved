@@ -1,6 +1,10 @@
 export default {
   theme: {
     extend: {
+      fontFamily: {
+        header: ['Overpass'],
+        body: ['Sora']
+      },
       colors: {
         dark: {
           1: '#2e3440',

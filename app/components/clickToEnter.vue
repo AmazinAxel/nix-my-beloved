@@ -19,8 +19,8 @@
 
         >
             <div class="basis-3/4">
-                <h1 class="text-light-1 text-xl"><strong>Nix</strong> is awesome</h1>
-                <h2 class="text-light-3 text-lg">(click to continue)</h2>
+                <h1 class="text-light-1 text-xl font-header"><strong>Nix</strong> is awesome</h1>
+                <h2 class="text-light-3 text-lg font-body">(click to continue)</h2>
             </div>
             <ArrowRightIcon class="
                 basis-1/4 h-17 w-17 text-light-2
