@@ -50,7 +50,7 @@
     
     <!-- main button to card transition -->
     <div class="inset-0 flex items-center justify-center z-10">
-      <Transition name="main" mode="out-in">
+      <Transition name="main">
         <ClickToEnter v-if="page == 0"/>
         <Book v-else/>
       </Transition>
@@ -86,7 +86,7 @@
 </template>
 
 
-<style> /* todo fix this animation looks bad */
+<style> /* transition between continue button and flipbook */
   .main-enter-from { transform: translateX(50rem); scale: 0.5; opacity: 0; }
-  .main-leave-to { transform: translateX(-50rem); scale: 1; opacity: 0; }
+  .main-leave-to { transform: translateX(-15rem); scale: 0.5; opacity: 0; }
 </style>
