@@ -13,7 +13,7 @@
         }"
         class="
             group bg-blue-2 p-2 rounded-lg text-light-1 shadow-md font-body flex gap-[5px]
-            opacity-70
+            opacity-70 cursor-pointer
 
             transition-all duration-[50ms] ease-out
             hover:opacity-100 hover:scale-105
@@ -34,7 +34,7 @@
             page++
         }"
         class="
-            group bg-blue-2 p-2 rounded-lg text-light-1 shadow-md font-body flex gap-[5px]
+            group bg-blue-2 p-2 rounded-lg text-light-1 shadow-md font-body flex gap-[5px] cursor-pointer
 
             transition-all duration-[50ms] ease-out
             hover:scale-105
