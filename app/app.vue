@@ -12,14 +12,14 @@
   // keybinds so i get extra heart
   onMounted(() => window.addEventListener('keydown', (e) => { // forward
     if (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 7) {
-      isReversing = false;
+      isReversing.value = false;
       page.value++;
     }}
   ));
 
   onMounted(() => window.addEventListener('keydown', (e) => { // back
     if (((e.code === 'ArrowLeft')) && page.value > 0) {
-      isReversing = true;
+      isReversing.value = true;
       page.value--;
     }}
   ));
