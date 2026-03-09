@@ -11,11 +11,24 @@ might want to grab a random section from the expression since sometimes it can b
         fade in, go down, code block
         then ??
 -->
-    <UCodeBlock :code="snippet" lang="nix" />
+    <UProsePre class="bg-dark-1" language="nix">
+        <span v-html="highlighted"/>
+        <!-- todo make this actually look good as background -->
+    </UProsePre>
 </template>
 
 <script setup>
+import { codeToHtml } from 'shiki'; // syntax highlighting
+
+// temp
 const snippet = `{ config, pkgs, ... }: {
   environment.systemPackages = with pkgs; [ git ];
 }`
+
+const highlighted = ref(''); // will have to find a new way to inline this or something for a loop
+
+onMounted(async () =>
+    highlighted.value = await codeToHtml(snippet, { lang: 'nix', theme: 'nord' })
+);
 </script>
+

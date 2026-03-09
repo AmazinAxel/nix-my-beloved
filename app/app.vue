@@ -81,6 +81,8 @@
       </Transition>
     </div>
 
+    <Randomcodeblocksfrommyflake/>
+
     <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
 
       <!-- this styling is very messy but basically seperates all the flakes into a cell and randomizes location per cell -->
