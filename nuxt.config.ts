@@ -7,5 +7,6 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts', '@nuxt/image']
+  css: ['~/style.css'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/ui']
 })

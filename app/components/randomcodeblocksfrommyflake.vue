@@ -6,5 +6,16 @@ might want to grab a random section from the expression since sometimes it can b
  -->
 
 <template>
-    
+    <!--     loop 20 times:
+        random spot on the background
+        fade in, go down, code block
+        then ??
+-->
+    <UCodeBlock :code="snippet" lang="nix" />
 </template>
+
+<script setup>
+const snippet = `{ config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ git ];
+}`
+</script>
