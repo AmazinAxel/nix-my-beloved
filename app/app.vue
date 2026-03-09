@@ -62,7 +62,7 @@
         <Page3 v-else-if="page == 3"/>
         <Page4 v-else-if="page == 4"/>
         <Page5 v-else-if="page == 5"/>
-        <Conclusion v-else/>
+        <Conclusion v-else="page == 6"/>
       </Transition>
     </div>
 
