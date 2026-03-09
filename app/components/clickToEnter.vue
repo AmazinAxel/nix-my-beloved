@@ -21,7 +21,7 @@
                 <h2 class="text-light-3 font-body">(click to continue)</h2>
             </div>
             <ArrowRightIcon class="
-                basis-1/4 h-17 w-17 text-light-2
+                basis-1/4 h-13 text-light-2
 
                 transition-all duration-50 ease-out
                 ease-in-out group-hover:translate-x-2
