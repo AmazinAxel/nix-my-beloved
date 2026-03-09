@@ -4,6 +4,6 @@
         <p class="gap-1 text-[1rem] font-body opacity-75 leading-tight">system configuring & packages done in a single file</p>
         <p class="gap-1 text-[0.75rem] italic font-body opacity-50 mt-[5px]">(or flake)</p>
         <p class="gap-1 text-[0.75rem] italic font-body opacity-50 -mt-[5px]">just look at how convenient this is ></p>
-        <ContinueBtn/>
+        <Buttons/>
     </Page>
 </template>

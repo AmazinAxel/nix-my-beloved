@@ -1,14 +1,29 @@
 <script setup>
   const page = ref(0); // flipbook page, 0 = not opened
-  provide('page', page); // make var global
+  const isReversing = ref(false); // flipbook going backwards
+  
+  // make vars global
+  provide('page', page);
+  provide('isReversing', isReversing);
 
   // fun particles
   import confetti from 'canvas-confetti';
   
   // keybinds so i get extra heart
-  onMounted(() => window.addEventListener('keydown', (e) =>
-    (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 8) && page.value++
+  onMounted(() => window.addEventListener('keydown', (e) => { // forward
+    if (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 7) {
+      isReversing = false;
+      page.value++;
+    }}
   ));
+
+  onMounted(() => window.addEventListener('keydown', (e) => { // back
+    if (((e.code === 'ArrowLeft')) && page.value > 0) {
+      isReversing = true;
+      page.value--;
+    }}
+  ));
+
 
   const defaultParticles = {
     spread: 360,
@@ -55,7 +70,7 @@
     
     <!-- main transitions -->
     <div class="inset-0 flex items-center justify-center z-10">
-      <Transition name="main" mode="out-in">
+      <Transition :name="isReversing ? 'back' : 'forward'" mode="out-in">
         <ClickToEnter v-if="page == 0"/>
         <Page1 v-else-if="page == 1"/>
         <Page2 v-else-if="page == 2"/>
@@ -97,6 +112,12 @@
 </template>
 
 <style> /* transition between continue button and flipbook */
-  .main-enter-from { transform: translateX(50rem); scale: 0.5; opacity: 0; }
-  .main-leave-to { transform: translateX(-15rem); scale: 0.5; opacity: 0; }
+
+  /* forward*/
+  .forward-enter-from { transform: translateX(50rem); scale: 0.5; opacity: 0; }
+  .forward-leave-to { transform: translateX(-15rem); scale: 0.5; opacity: 0; }
+
+  /* back */
+  .back-enter-from { transform: translateX(-50rem); scale: 0.5; opacity: 0; }
+  .back-leave-to { transform: translateX(15rem); scale: 0.5; opacity: 0; }
 </style>
