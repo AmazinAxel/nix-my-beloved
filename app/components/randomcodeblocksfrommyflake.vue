@@ -6,52 +6,68 @@ might want to grab a random section from the expression since sometimes it can b
   import { codeToHtml } from 'shiki'; // syntax highlighting
   import nixflakecode from "./mynixflakecode.json";
 
-  //shuffle(nixflakecode);
+  const codethings = ref([]); // all the code backround codeblock things
 
-  onMounted(async () =>
-    highlighted.value = await codeToHtml(snippet, { lang: 'nix', theme: 'nord' })
-  );
+  async function codeLoop(codething) {
+    while (true) { // repeat foreverr
 
-  // the all famous shuffling algorithm https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-  function shuffle(array) {
-    let currentIndex = array.length;
+      // starting
+      codething.transitionStop = true;
+      codething.opacity = 0;
+      codething.translateY = 0;
+      codething.y = Math.random() * 40;
+      codething.html = await codeToHtml(nixflakecode[Math.floor(Math.random() * nixflakecode.length)], { lang: 'nix', theme: 'nord' });
 
-    while (currentIndex != 0) {
-      let randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+      await sleep(100); // fix things not animating back down, idk why
 
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+      // fade in and go down
+      codething.transitionStop = false;
+      codething.opacity = 0.18;
+      codething.translateY = 180;
+
+      // fade out
+      await sleep(9000);
+      codething.opacity = 0;
+      await sleep(Math.random() * 1000 + 1500);
     };
   };
+
+  codethings.value = Array.from({ length: 6 }, (_, i) => ({ // objects
+    x: (i) * 20, // even spacing so it doesnt overlap as much
+    y: 0,
+    opacity: 0,
+    translateY: 0,
+    transitionStop: false,
+    html: ''
+  }));
+
+  onMounted(() => {
+    // dont spawn them at the same time
+    codethings.value.forEach(codethingy =>
+      sleep(Math.random() * 30000).then(() => codeLoop(codethingy))
+    )
+  });
+
+  // helper
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 </script>
 
-
 <template>
-  <div class="z-0" v-for="(_, i) in 20"> <!-- TODO fix the flakes not animating properly -->
+    <div
+      v-for="(codething, i) in codethings"
+      :key="i"
+      class="absolute pointer-events-none z-0 w-100 max-h-70 overflow-hidden"
+      :style="{
+        left: codething.x + 'vw',
+        top: codething.y + 'vh',
+        opacity: codething.opacity,
+        transform: `translateY(${codething.translateY}px)`, // go down
 
-    <!-- grody styling thing copied from app.vue -->
-      <UProsePre :style="{
-        top: ((Math.floor(i / 10) * 20) + (Math.random() * 20)) + 'vh',
-        left: (((i % 10) * 10) + (Math.random() * 10)) + 'vw',
-        width:  Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
-        rotate: (Math.random() * 360) + 'deg'
+        // fixes bug by not having animation when finished
+        transition: codething.transitionStop ? 'none' : 'transform 10s linear, opacity 1s linear'
       }"
-      class="bg-dark-3 w-10 absolute opacity-20 transition-all duration-[10000ms] ease-in-out"
-      language="nix">
-        <!-- get a random spot on the background
-          get a random code from shuffle(nixflakecode)[0]
-          fade in, go down, then fade out and start again
-        -->
+    > <!-- tbh i couldnt find how to do animations like that so i just hardcoded the styling -->
 
-        <span v-html="highlighted"/>
-    </UProsePre>
+    <span v-html="codething.html"/> <!-- syntax highlighted code -->
   </div>
-
-    <!-- loop 5 times:
-        random spot on the background
-        fade in, go down, code block
-        then ??
--->
 </template>
-

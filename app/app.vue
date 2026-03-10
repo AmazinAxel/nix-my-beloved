@@ -90,7 +90,7 @@
         top: ((Math.floor(i / 10) * 20) + (Math.random() * 20)) + 'vh',
         left: (((i % 10) * 10) + (Math.random() * 10)) + 'vw',
         width:  Math.min(Math.max((Math.random() * 50), 40), 50) + 'px',
-        rotate: (Math.random() * 360) + 'deg'
+        transform: 'rotate(' + (Math.random() * 360) + 'deg)' // wish i could just use rotate
       }"
 
       @mouseenter="particlesFromLoc($event, 2)"
