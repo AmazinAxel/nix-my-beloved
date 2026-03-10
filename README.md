@@ -17,4 +17,4 @@ spent a lot of time implementing this, vue syntax is confusing
   - i kind of like svelte more but tailwind is nice (never used vue before either)
 - Mobile supported (u can use it on your phone)
 - Usable with a keyboard (use your arrow keys)
-- Over 12 hours (14+ actually)
+- Over 12 hours (13.45+ actually)
