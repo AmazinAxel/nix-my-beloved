@@ -8,8 +8,9 @@
     <div class="transition-all duration-[400ms] ease-out">
         <button
             @mousedown="(event) => {
-                buttonParticles(event, 20)
-                page = 1
+                buttonParticles(event, 20);
+                isReversing = false;
+                page = 1;
             }"
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem] cursor-pointer
 

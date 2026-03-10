@@ -7,4 +7,4 @@ const data = await Promise.all(
   files.filter(file => file.endsWith('.nix')).map(file => readFile((dir +'/' + file), "utf8"))
 );
 
-await writeFile("./public/mynixflakecode.json", JSON.stringify(data, null, 2));
+await writeFile("./app/components/mynixflakecode.json", JSON.stringify(data, null, 2));
