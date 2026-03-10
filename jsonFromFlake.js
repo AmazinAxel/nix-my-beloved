@@ -1,3 +1,5 @@
+// !!! USE `bun jsonFromFlake.js` to run
+
 import { readdir, readFile, writeFile } from "fs/promises";
 
 const dir = '/home/alec/Projects/flake/';
