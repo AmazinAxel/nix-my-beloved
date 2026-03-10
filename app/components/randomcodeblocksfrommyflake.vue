@@ -1,6 +1,6 @@
 <!-- todo
-might want to grab a random section from the expression since sometimes it can be long
- -->
+  might want to grab a random section from the expression since sometimes it can be long
+-->
 
 <script setup>
   import { codeToHtml } from 'shiki'; // syntax highlighting
@@ -22,7 +22,7 @@ might want to grab a random section from the expression since sometimes it can b
 
       // fade in and go down
       codething.transitionStop = false;
-      codething.opacity = 0.18;
+      codething.opacity = 0.5;
       codething.translateY = 180;
 
       // fade out
@@ -41,33 +41,30 @@ might want to grab a random section from the expression since sometimes it can b
     html: ''
   }));
 
-  onMounted(() => {
-    // dont spawn them at the same time
-    codethings.value.forEach(codethingy =>
-      sleep(Math.random() * 30000).then(() => codeLoop(codethingy))
-    )
-  });
+  // dont spawn them at the same time
+  onMounted(() => codethings.value.forEach(codethingy =>
+    sleep(Math.random() * 10000).then(() => codeLoop(codethingy)))
+  );
 
   // helper
   const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 </script>
 
 <template>
-    <div
-      v-for="(codething, i) in codethings"
-      :key="i"
-      class="absolute pointer-events-none z-0 w-100 max-h-70 overflow-hidden"
-      :style="{
-        left: codething.x + 'vw',
-        top: codething.y + 'vh',
-        opacity: codething.opacity,
-        transform: `translateY(${codething.translateY}px)`, // go down
+  <div
+    v-for="(codething, i) in codethings"
+    :key="i"
+    class="absolute pointer-events-none z-0 w-100 max-h-70 overflow-hidden"
+    :style="{
+      left: codething.x + 'vw',
+      top: codething.y + 'vh',
+      opacity: codething.opacity,
+      transform: `translateY(${codething.translateY}px)`, // go down
 
-        // fixes bug by not having animation when finished
-        transition: codething.transitionStop ? 'none' : 'transform 10s linear, opacity 1s linear'
-      }"
-    > <!-- tbh i couldnt find how to do animations like that so i just hardcoded the styling -->
-
+      // fixes bug by not having animation when finished
+      transition: codething.transitionStop ? 'none' : 'transform 10s linear, opacity 1s linear'
+    }"
+  > <!-- tbh i couldnt find how to do animations like that so i just hardcoded the styling -->
     <span v-html="codething.html"/> <!-- syntax highlighted code -->
   </div>
 </template>

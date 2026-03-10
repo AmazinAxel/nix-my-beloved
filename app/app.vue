@@ -11,7 +11,7 @@
   
   // keybinds so i get extra heart
   onMounted(() => window.addEventListener('keydown', (e) => { // forward
-    if (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 7) {
+    if (((e.code === 'Space') || (e.code === 'Enter') || (e.code === 'ArrowRight')) && page.value < 11) {
       isReversing.value = false;
       page.value++;
     }}
@@ -66,22 +66,27 @@
 
 <template>
   <!-- center everything -->
-  <div class="relative flex items-center justify-center h-screen bg-light-3 overflow-hidden">
+  <div class="relative flex items-center justify-center h-screen overflow-hidden transition-all duration-[1s]" :class="page == 11 ? ['bg-dark-1'] : ['bg-light-3']">
     
     <!-- main transitions -->
     <div class="inset-0 flex items-center justify-center z-10">
       <Transition :name="isReversing ? 'back' : 'forward'" mode="out-in">
-        <ClickToEnter v-if="page == 0"/>
+        <ClickToOpen v-if="page == 0"/>
         <Page1 v-else-if="page == 1"/>
         <Page2 v-else-if="page == 2"/>
         <Page3 v-else-if="page == 3"/>
         <Page4 v-else-if="page == 4"/>
         <Page5 v-else-if="page == 5"/>
-        <Conclusion v-else="page == 6"/>
+        <Page6 v-else-if="page == 6"/>
+        <Page7 v-else-if="page == 7"/>
+        <Page8 v-else-if="page == 8"/>
+        <Page9 v-else-if="page == 9"/>
+        <Page10 v-else-if="page == 10"/>
+        <Conclusion v-else="page == 11"/>
       </Transition>
     </div>
 
-    <Randomcodeblocksfrommyflake/>
+    <Randomcodeblocksfrommyflake v-if="page == 11"/>
 
     <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
 
@@ -109,17 +114,17 @@
         hover:rotate-[300deg] hover:scale-[3]
       "/>
     </div>
-    <p class="absolute font-header color-darkest-4 bottom-[1rem] opacity-50">tip: u can press [space] to continue</p>
+    <p class="absolute font-header text-dark-1 bottom-[1rem] opacity-50" v-if="page != 6">tip: u can press [space] to continue</p>
   </div>
 </template>
 
 <style> /* transition between continue button and flipbook */
 
   /* forward*/
-  .forward-enter-from { transform: translateX(50rem); scale: 0.5; opacity: 0; }
-  .forward-leave-to { transform: translateX(-15rem); scale: 0.5; opacity: 0; }
+  .forward-enter-from { transform: translateX(20rem); scale: 0.85; opacity: 0; }
+  .forward-leave-to { transform: translateX(-15rem); scale: 0.85; opacity: 0; }
 
   /* back */
-  .back-enter-from { transform: translateX(-50rem); scale: 0.5; opacity: 0; }
-  .back-leave-to { transform: translateX(15rem); scale: 0.5; opacity: 0; }
+  .back-enter-from { transform: translateX(-20rem); scale: 0.85; opacity: 0; }
+  .back-leave-to { transform: translateX(15rem); scale: 0.85; opacity: 0; }
 </style>

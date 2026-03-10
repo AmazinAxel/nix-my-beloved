@@ -1,8 +1,9 @@
 <template>
-    <Page image="https://repology.org/graph/map_repo_size_fresh.svg">
-        <h1 class="text-[2rem] font-bold font-header leading-tight text-dark-4">sometimes breaks my packages >:(</h1>
-        <p class="inline-flex items-center gap-1 text-[1rem] italic font-body opacity-75 leading-tight text-dark-3">but saves me time not having to package stuff myself</p>
-        <!--right side has image of pks repo with text saying "this image is live" and pics of random eval errors like msedge with angry face-->
+    <Page image="/RG35XX-H.png">
+        <h1 class="text-[2rem] font-bold font-header leading-tight text-dark-4">..including on weird hardware</h1>
+        <p class="gap-1 text-[1rem] italic font-body opacity-75 leading-tight text-dark-3">spending 30 hours tinkering with you to boot on a cheap underpowered Chinese handheld was the best 2 weekends i've ever spent</p>
+        <p class="gap-1 text-[0.8rem] italic font-body opacity-60 leading-tight text-dark-3">dont even try running a desktop on this thing</p>
+        <p class="gap-1 text-[0.7rem] italic font-body opacity-50 leading-tight text-dark-3 pb-[10px]">i havent used this since then so it was very pointless</p>
         <Buttons/>
     </Page>
 </template>
