@@ -8,7 +8,7 @@ made for [hack club's coeur](https://coeur.hackclub.com/)
 
 The data is pulled from [my flake](https://github.com/amazinaxel/flake) using a script in this repository
 
-spent a lot of time implementing this, vue syntax is confusing
+spent a lot of time implementing that feature since vue syntax is confusing
 
 ## Sugar rushes
 
@@ -17,4 +17,4 @@ spent a lot of time implementing this, vue syntax is confusing
   - i kind of like svelte more but tailwind is nice (never used vue before either)
 - Mobile supported (u can use it on your phone)
 - Usable with a keyboard (use your arrow keys)
-- Over 12 hours (13.45+ actually)
+- Over 12 hours (14.5+ actually)
