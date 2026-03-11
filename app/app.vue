@@ -86,6 +86,24 @@
       </Transition>
     </div>
 
+    <!-- preload all images -->
+    <div class="hidden">
+      <NuxtImg src='/builderrors.png' loading="eager"/>
+      <NuxtImg src='/coeur-demo.png' loading="eager"/>
+      <NuxtImg src='/config.png' loading="eager"/>
+      <NuxtImg src='/favicon.png' loading="eager"/>
+      <NuxtImg src='/nix.svg' loading="eager"/>
+      <NuxtImg src='/nixcon.png' loading="eager"/>
+      <NuxtImg src='/nixeverything.png' loading="eager"/>
+      <NuxtImg src='/nixpet.gif' loading="eager"/>
+      <NuxtImg src='/packages.png' loading="eager"/>
+      <NuxtImg src='/patching.png' loading="eager"/>
+      <NuxtImg src='/RG35XX-H.png' loading="eager"/>
+      <NuxtImg src='/sobernotworking-old.png' loading="eager"/>
+      <NuxtImg src='/thatsalotofmodules.png' loading="eager"/>
+    </div>
+
+
     <Randomcodeblocksfrommyflake v-if="page == 11"/>
 
     <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
