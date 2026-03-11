@@ -86,7 +86,7 @@
       </Transition>
     </div>
 
-    <!-- preload all images -->
+    <!-- preload all images!!! -->
     <div class="hidden">
       <NuxtImg src='/builderrors.png' loading="eager"/>
       <NuxtImg src='/coeur-demo.png' loading="eager"/>
@@ -104,7 +104,7 @@
     </div>
 
 
-    <Randomcodeblocksfrommyflake v-if="page == 11"/>
+    <Randomcodeblocksfrommyflake v-if="page == 11"/> <!-- background flake code for last page -->
 
     <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
 
@@ -138,7 +138,7 @@
 
 <style> /* transition between continue button and flipbook */
 
-  /* forward*/
+  /* forward */
   .forward-enter-from { transform: translateX(20rem); scale: 0.85; opacity: 0; }
   .forward-leave-to { transform: translateX(-15rem); scale: 0.85; opacity: 0; }
 
