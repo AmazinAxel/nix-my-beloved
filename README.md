@@ -10,6 +10,14 @@ The data is pulled from [my flake](https://github.com/amazinaxel/flake) using a 
 
 spent a lot of time implementing that feature since vue syntax is confusing
 
+## how to use
+
+Head over to the site: <https://nix-my-beloved.amazinaxel.com>
+
+Then use your mouse to click the buttons to navigate forward or back or use space/enter/right arrow to go forward or the left arrow to go back
+
+The site is responsive so you can use a phone, tablet, laptop or desktop.
+
 ## Sugar rushes
 
 - [Demo here](https://hackclub.slack.com/archives/C0A6MCHFFEU/p1773025775352949)
