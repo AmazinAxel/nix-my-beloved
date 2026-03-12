@@ -12,6 +12,9 @@
                 isReversing = false;
                 page = 1;
             }"
+            @mouseenter="(event) => {
+                buttonParticles(event, 5);
+            }"
             class="group bg-blue-2 p-5 rounded-md flex gap-3 content-center w-[17rem] cursor-pointer
 
                 transition-all duration-200 ease-out
