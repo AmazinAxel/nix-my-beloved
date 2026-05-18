@@ -27,8 +27,10 @@ There's a (not so secret) easter egg which appears if you click all of the Nix f
   - i kind of like svelte more but tailwind is nice (never used vue before either)
 - Mobile supported (u can use it on your phone)
 - Usable with a keyboard (use your arrow keys)
-- Over 12 hours (14.5+ actually)
+- Over 12 hours
 
 ## changes since last ship
 
 Added a few new slides and updated the existing ones. New easter egg which appears if you click all of the Nix flakes
+
+(im definitely not just doing a reship just for the keychain.. ok fine u caught me- i am)

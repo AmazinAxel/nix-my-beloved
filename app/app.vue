@@ -1,7 +1,7 @@
 <script setup>
   const page = ref(0); // flipbook page, 0 = not opened
   const isReversing = ref(false); // flipbook going backwards
-  const easterEggFlakeCount = ref(1); // for tracking easter egg
+  const easterEggFlakeCount = ref(50); // for tracking easter egg
   const isTransitioning = ref(false); // fixes glitchiness of easter egg
 
   // make vars global
@@ -151,7 +151,7 @@
 
     <Randomcodeblocksfrommyflake v-if="page == 14"/> <!-- background flake code for last page -->
 
-    <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -->
+    <div class="z-0" v-for="(_, i) in 50"> <!-- spawns a bunch of nix flakes!! mixes styling tho -- DO NOT USE easterEggFlakeCount IN PLACE OF INT -->
 
       <!-- this styling is very messy but basically seperates all the flakes into a cell and randomizes location per cell -->
       <NuxtImg src="/nix.svg" :style="{
