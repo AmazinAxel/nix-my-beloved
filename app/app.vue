@@ -126,7 +126,7 @@
         event.target.style.pointerEvents = 'none'
       }"
 
-      class="w-10 absolute opacity-50
+      class="w-10 absolute opacity-50 cursor-pointer
 
         transition-all duration-[1000ms] ease-out
         hover:rotate-[300deg] hover:scale-[3]

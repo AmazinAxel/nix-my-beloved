@@ -18,6 +18,8 @@ Then use your mouse to click the buttons to navigate forward or back or use spac
 
 The site is responsive so you can use a phone, tablet, laptop or desktop.
 
+There's a (not so secret) easter egg which appears if you click all of the Nix flakes in the background! Try it!!
+
 ## Sugar rushes
 
 - [Demo here](https://hackclub.slack.com/archives/C0A6MCHFFEU/p1773025775352949)
