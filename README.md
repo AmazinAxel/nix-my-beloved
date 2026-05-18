@@ -6,9 +6,9 @@ made for [hack club's coeur](https://coeur.hackclub.com/)
 
 ## Note about the nix background code
 
-The data is pulled from [my flake](https://github.com/amazinaxel/flake) using a script in this repository
+The data is pulled from [my flake](https://github.com/amazinaxel/flake) using a script in this repository which saves it to a large json file
 
-spent a lot of time implementing that feature since vue syntax is confusing
+Running it with bun will update the file but since this command has to be ran manually it means the background code may become outdated over time
 
 ## how to use
 
@@ -18,7 +18,7 @@ Then use your mouse to click the buttons to navigate forward or back or use spac
 
 The site is responsive so you can use a phone, tablet, laptop or desktop.
 
-There's a (not so secret) easter egg which appears if you click all of the Nix flakes in the background! Try it!!
+There's a (not so secret) easter egg which appears if you click all of the Nix flakes in the background! Try it!! :D
 
 ## Sugar rushes
 
@@ -28,3 +28,7 @@ There's a (not so secret) easter egg which appears if you click all of the Nix f
 - Mobile supported (u can use it on your phone)
 - Usable with a keyboard (use your arrow keys)
 - Over 12 hours (14.5+ actually)
+
+## changes since last ship
+
+Added a few new slides and updated the existing ones. New easter egg which appears if you click all of the Nix flakes
