@@ -146,6 +146,9 @@
       <NuxtImg src='/RG35XX-H.png' loading="eager"/>
       <NuxtImg src='/sobernotworking-old.png' loading="eager"/>
       <NuxtImg src='/thatsalotofmodules.png' loading="eager"/>
+      <NuxtImg src='/lfnw26.png' loading="eager"/>
+      <NuxtImg src='/hackatime.png' loading="eager"/>
+      <NuxtImg src='/newshell.png' loading="eager"/>
     </div>
 
 
